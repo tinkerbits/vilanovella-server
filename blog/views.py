@@ -8,6 +8,13 @@ class BlogListView(ListView):
     model = Post
     template_name = 'home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['newest_post_first'] = Post.objects.all().order_by('-created')
+        return context
+
+
+
 class BlogDetailView(FormMixin, DetailView):
     model = Post
     template_name = 'post_detail.html'
