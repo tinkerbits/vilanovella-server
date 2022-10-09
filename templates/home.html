@@ -8,7 +8,7 @@
                 <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
             </h2>
             <p>
-                {{ post.body }}
+                {{ post.preheader }} <a href="{% url 'post_detail' post.id %}"><i>read more</i>.</a>
             </p>
         </div>
     {% endfor %}

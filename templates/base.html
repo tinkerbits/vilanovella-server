@@ -13,9 +13,12 @@
                 <a href="{% url 'home' %}">Vilanovella Blog</a>
             </h1>
         </header>
-        <div>
+        <div class="post-area">
             {% block content %}
             {% endblock content %}
         </div>
+        <footer>
+            Copyright Jon Burke
+        </footer>
     </body>
 </html>
