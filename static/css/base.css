@@ -6,7 +6,8 @@ body {
     min-height: 100vh;
     font-size: 18pt;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-weight: 400;
+    color: black;
     /*
     font-family: 'Amatic SC', cursive;
     font-family: 'Athiti', sans-serif;
@@ -24,7 +25,7 @@ body {
 
 header {
     grid-column: span 3;
-    margin: auto;
+    grid-column-start: 2;
 }
 
 .post-area {
@@ -36,5 +37,35 @@ header {
 footer {
     grid-column: span 3;
     margin: auto;
-    color: lightslategrey
+    color: lightslategrey;
+}
+
+a {
+    color: slategrey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(61, 69, 78);
+    text-decoration: none;
+}
+
+h1 a {
+    color: black;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: slategrey;
+    text-decoration: none;
+}
+
+h2 a {
+    color: black;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    color: slategrey;
+    text-decoration: none;
 }
