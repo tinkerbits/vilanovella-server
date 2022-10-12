@@ -1,9 +1,25 @@
 
 body {
     display: grid;
-    grid-template-columns: 2fr 8fr 1fr;
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 10% 1fr 5%;
     min-height: 100vh;
+    font-size: 18pt;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    /*
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Athiti', sans-serif;
+    font-family: 'Cormorant', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Crimson Text', serif;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Serif Pro', serif;
+    */
 }
 
 header {
