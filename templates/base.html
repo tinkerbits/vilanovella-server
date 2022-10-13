@@ -1,5 +1,7 @@
 {% load static %}
 
+<!DOCTYPE html>
+
 <html>
 
     <head>
@@ -12,9 +14,12 @@
     
     <body>    
         <header>
-            <h1>
-                <a href="{% url 'home' %}">Vilanovella Blog</a>
+            <h1 class="home">
+                <a href="{% url 'home' %}">Vilanovella</a>
             </h1>
+            <h3 class="about">
+                <a href="{% url 'about' %}">About</a>
+            </h3>
         </header>
         <div class="post-area">
             {% block content %}
