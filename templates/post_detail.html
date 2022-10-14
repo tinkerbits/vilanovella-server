@@ -7,8 +7,6 @@
     <h2>{{ post.title }}</h2>
     <p>{{ post.body | linebreaks }}</p>
     <img src="{{ post.post_image_1.url }}" alt="post_image_1" style="max-width: 33%;">
-
-
 </div>
 
 <div>
@@ -22,7 +20,8 @@
 </div>
 <div>
     {% for comment in comments %}
-        {{comment.name}}: "{{ comment.comment }}"<br><br>
+    <i></i>
+        {{comment.name}}: "<i>{{ comment.comment }}</i>"<br><br>
     {% endfor %}
 </div>
 

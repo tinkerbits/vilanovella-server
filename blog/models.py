@@ -1,13 +1,13 @@
 from django.db import models
-from django.urls import reverse
-from datetime import datetime
+from tinymce.models import HTMLField
+
 
 class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now = True)
     title = models.CharField(max_length=200)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    body = models.TextField()
+    body = HTMLField()
     preheader = models.TextField()
     post_image_1 = models.ImageField(blank=True, null=True)
     post_image_2 = models.ImageField(blank=True, null=True)
