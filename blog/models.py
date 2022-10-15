@@ -1,12 +1,12 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now = True)
     title = models.CharField(max_length=200)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    body = models.TextField()
+    body = RichTextField(blank=True, null=True)
     preheader = models.TextField()
     post_image_1 = models.ImageField(blank=True, null=True)
     post_image_2 = models.ImageField(blank=True, null=True)
