@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
 
     #3rd Party
-    'tinymce',
 ]
 
 MIDDLEWARE = [

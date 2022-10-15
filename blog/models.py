@@ -1,5 +1,4 @@
 from django.db import models
-from tinymce.models import HTMLField
 
 
 class Post(models.Model):
@@ -7,7 +6,7 @@ class Post(models.Model):
     last_modified = models.DateTimeField(auto_now = True)
     title = models.CharField(max_length=200)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    body = HTMLField()
+    body = models.TextField()
     preheader = models.TextField()
     post_image_1 = models.ImageField(blank=True, null=True)
     post_image_2 = models.ImageField(blank=True, null=True)
