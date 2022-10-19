@@ -135,3 +135,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #for serving images in blog posts
 
 MEDIA_URL = '/media/' #for serving images in blog posts
+
+#CKEditor Config
+### See https://github.com/django-ckeditor/django-ckeditor#optional---customizing-ckeditor-editor
+### See https://www.youtube.com/watch?v=ggPfQfuV7rM
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

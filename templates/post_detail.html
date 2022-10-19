@@ -4,11 +4,17 @@
 
 <div class="post-entry">
 
-    <h2>{{ post.title }}</h2>
+    <h2 class="post-title">
+        {{ post.title }}
+    </h2>
+    <p class="post-datetime">
+        <i>{{post.created | date:"j F Y"}}</i>
+    </p>
     <p>{{ post.body | safe }}</p>
 </div>
 
-<div>
+<br><br>
+<div class="comments-section">
     <form action="" method="post">
         {% csrf_token %}
         {{ form }}
@@ -16,11 +22,11 @@
             <button type="submit" >Submit</button>
         </div>
     </form>
-</div>
-<div>
     {% for comment in comments %}
-    <i></i>
-        {{comment.name}}: "<i>{{ comment.comment }}</i>"<br><br>
+        <div class="comment-box">
+            <span class="user-name"><i>{{comment.name}}</i></span><br>
+            {{ comment.comment }}
+        </div>
     {% endfor %}
 </div>
 
