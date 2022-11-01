@@ -8,7 +8,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0001_initial'),
+        ('archive', '0001_initial'),
     ]
 
     operations = [
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('last_modified', models.DateTimeField(auto_now=True)),
                 ('name', models.CharField(max_length=50)),
                 ('comment', models.TextField()),
-                ('related_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='blog.post')),
+                ('related_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='archive.post')),
             ],
         ),
     ]

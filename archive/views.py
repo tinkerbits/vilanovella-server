@@ -4,9 +4,9 @@ from django.urls import reverse
 from .models import Post
 from .forms import CommentForm
 
-class BlogListView(ListView):
+class PostListView(ListView):
     model = Post
-    template_name = 'home.html'
+    template_name = 'archive.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -15,7 +15,7 @@ class BlogListView(ListView):
 
 
 
-class BlogDetailView(FormMixin, DetailView):
+class PostDetailView(FormMixin, DetailView):
     model = Post
     template_name = 'post_detail.html'
     form_class = CommentForm
@@ -40,7 +40,7 @@ class BlogDetailView(FormMixin, DetailView):
         postid = self.kwargs['pk']
         form.instance.related_post = Post.objects.get(id=postid)
         form.save()
-        return super(BlogDetailView, self).form_valid(form)
+        return super(PostDetailView, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.object.id})

@@ -2,18 +2,6 @@
 
 {% block content %}
 
-    {% for post in newest_post_first %}
-        <div class="post-entry">
-            <h2 class="post-title">
-                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
-            </h2>
-            <p class="post-datetime">
-                <i>{{post.created | date:"j F Y"}}</i>
-            </p>
-            <p>
-                {{ post.preheader }} <a href="{% url 'post_detail' post.id %}"><i>read more</i>.</a>
-            </p>
-        </div>
-    {% endfor %}
+    hello world
 
 {% endblock content %}

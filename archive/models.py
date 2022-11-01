@@ -7,14 +7,9 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
+    hero_image = models.ImageField(blank=True, null=True)
     preheader = models.TextField()
-    post_image_1 = models.ImageField(blank=True, null=True)
-    post_image_2 = models.ImageField(blank=True, null=True)
-    post_image_3 = models.ImageField(blank=True, null=True)
-    post_image_4 = models.ImageField(blank=True, null=True)
-    post_image_5 = models.ImageField(blank=True, null=True)
-    post_image_6 = models.ImageField(blank=True, null=True)
-    post_image_7 = models.ImageField(blank=True, null=True)
+
 
 
     def __str__(self):
