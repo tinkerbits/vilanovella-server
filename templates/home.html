@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    hello world
-
+    <div class="hero-image-area">
+        {% for post in newest_post_first %}
+            {% if post.hero_image and forloop.first %}
+                <div class="hero-div">
+                    <a href="{% url 'post_detail' post.id %}"><img class="hero-image" src="{{post.hero_image}}" alt="hero image"></a>
+                </div>
+            {% elif post.hero_image and forloop.counter0 >= 1 and forloop.counter0 <= 2 %}
+                <div class="other-div-{{forloop.counter0}}">
+                    <a href="{% url 'post_detail' post.id %}"><img class="other-image-{{forloop.counter0}}" src="{{post.hero_image}}" alt="other image"></a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock content %}

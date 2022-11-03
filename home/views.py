@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from archive.views import PostListView
 
-class HomeView(TemplateView):
+class HomeView(PostListView):
     template_name = 'home.html'
