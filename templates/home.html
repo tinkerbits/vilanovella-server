@@ -5,12 +5,29 @@
         {% for post in newest_post_first %}
             {% if post.hero_image and forloop.first %}
                 <div class="hero-div">
-                    <a href="{% url 'post_detail' post.id %}"><img class="hero-image" src="{{post.hero_image}}" alt="hero image"></a>
+                    <a class="hero-link" href="{% url 'post_detail' post.id %}">
+                        <img class="hero-image" src="{{post.hero_image}}" alt="hero image">
+                        <div class="text-block-hero">
+                            <div class="text-block-content-hero">
+                                <span class="post-title-hero">{{post.title}}</span><br>
+                                <span class="post-preheader-hero">{{post.preheader}}</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             {% elif post.hero_image and forloop.counter0 >= 1 and forloop.counter0 <= 2 %}
                 <div class="other-div-{{forloop.counter0}}">
-                    <a href="{% url 'post_detail' post.id %}"><img class="other-image-{{forloop.counter0}}" src="{{post.hero_image}}" alt="other image"></a>
+                    <a class="other-link" href="{% url 'post_detail' post.id %}">
+                        <img class="other-image-{{forloop.counter0}}" src="{{post.hero_image}}" alt="other image">  
+                        <div class="text-block-other">
+                            <div class="text-block-content-other">
+                                <span class="post-title-other">{{post.title}} > </span>
+                                <span class="post-preheader-other">{{post.preheader}}</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+
             {% endif %}
         {% endfor %}
         <div class="arrow-to-older-posts-div">

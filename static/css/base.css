@@ -150,6 +150,13 @@ h3 a:hover {
     background-color: #fef5f1;;
 }
 
+@media (max-width: 600px) {
+    .form-name  {
+        width: 75%
+    };
+}
+
+
 .form-comment {
     margin: 0.5rem;
     padding: 0.5rem;
@@ -254,6 +261,8 @@ div.hero-div {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 4;
+    position: relative;
+    height: fit-content;
 }
 
 @media (max-width: 600px) {
@@ -266,10 +275,10 @@ div.hero-div {
 }
 
 img.hero-image {
-    border-radius: 4px;
+    border-radius: 8px;
     max-width: 100%;
-    max-height: 100%;
     margin: auto;
+    box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
 }
 
 img.hero-image:hover {
@@ -280,6 +289,8 @@ div.other-div-1 {
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
+    position: relative;
+    height: fit-content;
 }
 
 @media (max-width: 600px) {
@@ -290,10 +301,11 @@ div.other-div-1 {
 }
 
 img.other-image-1 {
-    border-radius: 4px;
+    border-radius: 6px;
     max-width: 100%;
     max-height: 100%;
     margin: auto;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
 }
 
 img.other-image-1:hover {
@@ -304,6 +316,8 @@ div.other-div-2 {
     grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+    position: relative;
+    height: fit-content;
 }
 
 @media (max-width: 600px) {
@@ -314,10 +328,12 @@ div.other-div-2 {
 }
 
 img.other-image-2 {
-    border-radius: 4px;
+    border-radius: 6px;
     max-width: 100%;
     max-height: 100%;
     margin: auto;
+    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
+
 }
 
 img.other-image-2:hover {
@@ -353,3 +369,61 @@ img.arrow-to-older-posts-image:hover {
     max-width: 75%;
 }
 
+/*hero-textbox*/
+div.text-block-hero {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255, 0.8);
+  }
+
+div.text-block-content-hero {
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+span.post-title-hero {
+    font-size: 2.5rem;
+}
+
+span.post-preheader-hero {
+    font-weight: 400;
+}
+
+/*other-textbox*/
+div.text-block-other {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255, 0.8);
+  }
+
+div.text-block-content-other {
+    font-weight: bolder;
+    font-size: 1.15rem;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+span.post-title-other {
+    font-size: 1.5rem;
+}
+
+span.post-preheader-other {
+    font-weight: 400;
+}
+
+/*post-images*/
+img.post-image {
+    border-radius: 6px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+a.hero-link, a.other-link {
+    color: #000000;
+    text-decoration: none;
+}
