@@ -2,18 +2,18 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 1fr;
     grid-template-rows: 150px 1fr 50px;
-    min-height: 100vh;
+    max-height: 100vh;
     font-size: 18pt;
     font-family: 'Cormorant Garamond', serif !important;
     font-weight: 400;
     color: black;
     background-color: #fef5f1;
-    margin: 0;
+    margin: 0; /*removes the margin the browser automatically adds to the body*/
 }
 
 @media (max-width: 600px) {
     body {
-        grid-template-rows: 150px 3rem 1fr 50px;
+        grid-template-rows: 150px 3rem 1fr 50px; /*on small screens, add an extra row of 3rem high for the "Archive About" menubar*/
     };
 }
 
@@ -38,6 +38,7 @@ header {
 @media (max-width: 600px) {
     .post-area {
         grid-row-start: 3;
+        margin-top: 1.5rem;
     };
 }
 
@@ -46,13 +47,12 @@ footer {
     grid-row-start: 3;
     grid-column-end: 5;
     margin: auto;
-    color: #778899;
+    color: #708090;
 }
 
 @media (max-width: 600px) {
     footer {
-        grid-row-start: 5;
-        vertical-align: bottom;
+        grid-row-start: 4;
     };
 }
 
@@ -62,7 +62,7 @@ footer {
     grid-column-end: 3;
     align-self: center;
     text-align: left;
-    font-size: 60px;
+    font-size: 4rem;
 }
 
 @media (max-width: 600px) {
@@ -101,7 +101,7 @@ a {
 }
 
 a:hover {
-    color: #55616d;
+    color: #3d454e;
     text-decoration: none;
 }
 
@@ -249,7 +249,7 @@ div.hero-image-area {
 
 @media (max-width: 600px) {
     div.hero-image-area {
-        height: auto;
+        height: fit-content;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         column-gap: 0;
@@ -354,8 +354,7 @@ div.arrow-to-older-posts-div {
         grid-row-start: 4;
         grid-row-end: 5;
         text-align: center;
-        display: flex;
-        align-items: flex-start;
+        align-items: center;
     };
 }
 
@@ -387,15 +386,18 @@ div.text-block-content-hero {
 
 @media (max-width: 600px) {
     div.text-block-content-hero {
-        font-weight: bolder;
         font-size: 1.5rem;
-        text-align: center;
-        padding: 0.3rem;
     };
 }
 
 span.post-title-hero {
     font-size: 2.5rem;
+}
+
+@media (max-width: 600px) {
+    div.post-title-hero {
+        font-size: 1.5rem;
+    };
 }
 
 span.post-preheader-hero {
