@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 1fr;
     grid-template-rows: 150px 1fr 50px;
-    max-height: 100vh;
+    min-height: 100vh;
     font-size: 18pt;
     font-family: 'Cormorant Garamond', serif !important;
     font-weight: 400;
