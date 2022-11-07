@@ -96,12 +96,12 @@ footer {
 
 /*link styles*/
 a {
-    color: slategrey;
+    color: #708090;
     text-decoration: none;
 }
 
 a:hover {
-    color: #708090;
+    color: #55616d;
     text-decoration: none;
 }
 
@@ -383,6 +383,15 @@ div.text-block-content-hero {
     font-size: 2rem;
     text-align: center;
     padding: 0.3rem;
+}
+
+@media (max-width: 600px) {
+    div.text-block-content-hero {
+        font-weight: bolder;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.3rem;
+    };
 }
 
 span.post-title-hero {
