@@ -3,7 +3,7 @@ body {
     grid-template-columns: 1fr 4fr 1fr 1fr;
     grid-template-rows: 150px 1fr 50px;
     min-height: 100vh;
-    font-size: 18pt;
+    font-size: 1.5rem;
     font-family: 'Cormorant Garamond', serif !important;
     font-weight: 400;
     color: black;
@@ -13,6 +13,8 @@ body {
 
 @media (max-width: 600px) {
     body {
+        font-size: 1.3rem;
+        grid-template-columns: 1fr 8fr 2fr 1fr;
         grid-template-rows: 150px 3rem 1fr 50px; /*on small screens, add an extra row of 3rem high for the "Archive About" menubar*/
     };
 }
@@ -77,6 +79,7 @@ footer {
     grid-column-end: 4;
     align-self: center;
     text-align: right;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 600px) {
@@ -152,7 +155,7 @@ h3 a:hover {
 
 @media (max-width: 600px) {
     .form-name  {
-        width: 75%
+        width: 55%
     };
 }
 
@@ -160,7 +163,7 @@ h3 a:hover {
 .form-comment {
     margin: 0.5rem;
     padding: 0.5rem;
-    width: 100%;
+    width: calc(100% - 1rem);
     height: 2rem;
     font-size: 1.2rem;
     color: #3d454e;
@@ -217,6 +220,13 @@ div.comments-section {
     margin-right: 15%;
 }
 
+@media (max-width: 600px) {
+    div.comments-section  {
+        margin-left: 0;
+        margin-right: 0;
+    };
+}
+
 div.comment-box {
     background-color: #e4ecf5;
     border-radius: 4px;
@@ -262,7 +272,9 @@ div.hero-div {
     grid-row-start: 1;
     grid-row-end: 4;
     position: relative;
-    height: fit-content;
+    max-height: calc(100vh - 150px - 50px);
+    max-width: fit-content;
+    
 }
 
 @media (max-width: 600px) {
@@ -277,6 +289,7 @@ div.hero-div {
 img.hero-image {
     border-radius: 8px;
     max-width: 100%;
+    max-height: 100%;
     margin: auto;
     box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
 }
@@ -388,7 +401,11 @@ div.text-block-content-hero {
 
 @media (max-width: 600px) {
     div.text-block-content-hero {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     };
 }
 
@@ -397,7 +414,7 @@ span.post-title-hero {
 }
 
 @media (max-width: 600px) {
-    div.post-title-hero {
+    span.post-title-hero {
         font-size: 1.5rem;
     };
 }
@@ -422,8 +439,24 @@ div.text-block-content-other {
     padding: 0.3rem;
 }
 
+@media (max-width: 600px) {
+    div.text-block-content-other {
+        font-size: 1.1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    };
+}
+
 span.post-title-other {
     font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    span.post-title-other {
+        font-size: 1.3rem;
+    };
 }
 
 span.post-preheader-other {
@@ -439,4 +472,18 @@ img.post-image {
 a.hero-link, a.other-link {
     color: #000000;
     text-decoration: none;
+}
+
+div.share-buttons {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    div.share-buttons {
+        width: 80%;
+    };
 }

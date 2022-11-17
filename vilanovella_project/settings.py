@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jr605k(xu25lk*-7vn1t^ft(bq4ulpnm*m*a9fr5+v$v3hb^f3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vilanovella.com', 'www.vilanovella.com', '192.46.233.75']
 
 
 # Application definition
@@ -82,14 +82,19 @@ WSGI_APPLICATION = 'vilanovella_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# https://sweetcode.io/django-postgresql-migration-from-sqlite/
+# https://medium.com/djangotube/django-sqlite-to-postgresql-database-migration-e3c1f76711e1
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'vilanovella',
+        'USER': 'jon',
+        'PASSWORD': 'nocojones',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -122,18 +127,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #for serving images in blog posts
 
@@ -147,3 +144,13 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
     },
 }
+
+
+# Static config for Nginx
+# https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-22-04
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+# https://stackoverflow.com/a/70692473/10842457 (make sure to give access to www-data as explained here)
+
+STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

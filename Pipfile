@@ -9,6 +9,8 @@ pillow = "*"
 django-tinymce = "*"
 django-ckeditor = "*"
 django-social-share = "*"
+psycopg2 = "*"
+gunicorn = "*"
 
 [dev-packages]
 
