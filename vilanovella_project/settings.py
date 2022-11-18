@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'archive.apps.ArchiveConfig',
     'about.apps.AboutConfig',
     'home.apps.HomeConfig',
@@ -154,3 +156,8 @@ CKEDITOR_CONFIGS = {
 STATIC_URL = '/static/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# Sitemap Config
+# https://learndjango.com/tutorials/django-sitemap-tutorial
+SITE_ID = 1

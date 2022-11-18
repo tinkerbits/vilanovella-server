@@ -266,7 +266,7 @@ div.hero-image-area {
     };
 }
 
-div.hero-div {
+div.hero-div-desktop {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -274,43 +274,77 @@ div.hero-div {
     position: relative;
     max-height: calc(100vh - 150px - 50px);
     max-width: fit-content;
-    
+    height: fit-content;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
+
+}
+
+div.hero-div-desktop:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 600px) {
-    div.hero-div {
+    .desktop-only {
+        display: none;
+    };
+}
+
+
+div.hero-div-mobile {
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: 2px 2px 20px rgb(0 0 0 / 50%);
+        height: fit-content;
+}
+
+@media (min-width: 600px) {
+    .mobile-only {
+        display: none;
     };
 }
+
+
 
 img.hero-image {
     border-radius: 8px;
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
+    display:block;
 }
 
-img.hero-image:hover {
-    opacity: 90%;
+@media (max-width: 600px) {
+    img.hero-image {
+        border-radius: 8px 8px 0px 0px;
+    };
 }
 
-div.other-div-1 {
+div.other-div-desktop-1 {
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 2;
     position: relative;
     height: fit-content;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
 }
 
-@media (max-width: 600px) {
-    div.other-div-1 {
-        grid-row-start: 2;
-        grid-row-end: 3;
-    };
+div.other-div-desktop-1:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
+}
+
+div.other-div-mobile-1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 50%);
+    height: fit-content;
 }
 
 img.other-image-1 {
@@ -318,39 +352,41 @@ img.other-image-1 {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
+    display: block;
 }
 
-img.other-image-1:hover {
-    opacity: 90%;
-}
 
-div.other-div-2 {
+div.other-div-desktop-2 {
     grid-column-start: 2;
     grid-row-start: 2;
     grid-row-end: 3;
     position: relative;
     height: fit-content;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 3px 3px 20px rgb(0, 0, 0, 0.5);
 }
 
-@media (max-width: 600px) {
-    div.other-div-2 {
-        grid-row-start: 3;
-        grid-row-end: 4;
-    };
+div.other-div-desktop-2:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
 }
+
+div.other-div-mobile-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 50%);
+    height: fit-content;
+}
+
 
 img.other-image-2 {
     border-radius: 6px;
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.5);
-
-}
-
-img.other-image-2:hover {
-    opacity: 90%;
+    display: block;
 }
 
 div.arrow-to-older-posts-div {
@@ -384,13 +420,18 @@ img.arrow-to-older-posts-image:hover {
 }
 
 /*hero-textbox*/
-div.text-block-hero {
+div.text-block-hero-desktop {
     position: absolute;
     bottom: 10%;
     width: 100%;
     height: fit-content;
     background-color: rgb(255, 255, 255, 0.8);
   }
+
+div.text-block-mobile {
+    background: #ffffff;
+    border-radius: 0px 0px 8px 8px;
+}
 
 div.text-block-content-hero {
     font-weight: bolder;
@@ -402,10 +443,7 @@ div.text-block-content-hero {
 @media (max-width: 600px) {
     div.text-block-content-hero {
         font-size: 1.3rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        padding: 0.5rem;
     };
 }
 
@@ -449,7 +487,7 @@ div.text-block-content-other {
     };
 }
 
-span.post-title-other {
+span.post-title-mobile {
     font-size: 1.5rem;
 }
 
@@ -458,8 +496,10 @@ span.post-title-other {
         font-size: 1.3rem;
     };
 }
-
 span.post-preheader-other {
+    font-weight: 400;
+}
+span.post-preheader-mobile {
     font-weight: 400;
 }
 
